@@ -9,14 +9,20 @@ TriggerTime = raw_input("Please enter the initial trigger date in the format 'yy
 FMT = '%Y/%m/%d %H:%M:%S.%f'
 
 #Will add loop after here to make it quicker to calculate for multiple observations
-ObsTime = raw_input("Please enter the observation time in the format 'yyyy/mm/dd hh:mm:ss.ss': ")
+while True:
 
-TimeDiff = datetime.strptime(ObsTime, FMT) - datetime.strptime(TriggerTime, FMT)
+	ObsTime = raw_input("Please enter the observation time in the format 'yyyy/mm/dd hh:mm:ss.ss': ")
 
-print("Time difference in seconds:")
-print(TimeDiff.total_seconds())
+	TimeDiff = datetime.strptime(ObsTime, FMT) - datetime.strptime(TriggerTime, FMT)
 
-TimeDiffDays=float(TimeDiff.total_seconds()/86400)
+	print("Time difference in seconds:")
+	print(TimeDiff.total_seconds())
 
-print("Time difference in days:")
-print(TimeDiffDays)
+	TimeDiffDays=float(TimeDiff.total_seconds()/86400)
+
+	print("Time difference in days:")
+	print(TimeDiffDays)
+
+	Question = raw_input("Do you want to check another time (y/n)? ")
+	if Question.strip() != "y":
+		break
