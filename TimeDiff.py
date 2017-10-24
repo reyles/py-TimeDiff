@@ -3,12 +3,13 @@ import datetime
 from datetime import datetime
 from datetime import timedelta
 
-#Time differences are calculated from here
+#Times are inserted here
 TriggerTime = raw_input("Please enter the initial trigger date in the format 'yyyy/mm/dd hh:mm:ss.ss': ")
 
-ObsTime = raw_input("Please enter the observation time in the format 'yyyy/mm/dd hh:mm:ss.ss': ")
-
 FMT = '%Y/%m/%d %H:%M:%S.%f'
+
+#Will add loop after here to make it quicker to calculate for multiple observations
+ObsTime = raw_input("Please enter the observation time in the format 'yyyy/mm/dd hh:mm:ss.ss': ")
 
 TimeDiff = datetime.strptime(ObsTime, FMT) - datetime.strptime(TriggerTime, FMT)
 
