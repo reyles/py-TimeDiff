@@ -1,20 +1,21 @@
-#Needed to work
+#All needed to work
 import datetime
 from datetime import datetime
 from datetime import timedelta
 
-#Times are inserted here
+#Trigger time is given here
 TriggerTime = raw_input("Please enter the initial trigger date in the format 'yyyy/mm/dd hh:mm:ss.ss': ")
 
 FMT = '%Y/%m/%d %H:%M:%S.%f'
 
-#Will add loop after here to make it quicker to calculate for multiple observations
+#Loops until the user doesn't enter y. Will ask for a new observation time to compare with the same trigger time.
 while True:
 
 	ObsTime = raw_input("Please enter the observation time in the format 'yyyy/mm/dd hh:mm:ss.ss': ")
 
 	TimeDiff = datetime.strptime(ObsTime, FMT) - datetime.strptime(TriggerTime, FMT)
 
+	#While not necessarily needed, it could be useful to have the time in seconds (SI unit) as well
 	print("Time difference in seconds:")
 	print(TimeDiff.total_seconds())
 
